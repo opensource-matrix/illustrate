@@ -1,5 +1,5 @@
 <?php
-namespace Illuminate\Auth\Access;
+namespace Illustrate\Auth\Access;
 class Response
 {
     /**
