@@ -23,5 +23,5 @@ interface Router {
      * 
      * @return void
      */
-    public function post();
+    private function post();
 }
