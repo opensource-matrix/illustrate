@@ -17,4 +17,6 @@ interface Router {
      * @return void
      */
     public function get();
+
+    public function 
 }
