@@ -1,23 +1,23 @@
 <?php
-namespace Illuminate\Auth;
-use Illuminate\Support\Str;
-use Illuminate\Contracts\Auth\UserProvider;
-use Illuminate\Contracts\Support\Arrayable;
-use Illuminate\Database\ConnectionInterface;
-use Illuminate\Contracts\Hashing\Hasher as HasherContract;
-use Illuminate\Contracts\Auth\Authenticatable as UserContract;
+namespace Illustrate\Auth;
+use Illustrate\Support\Str;
+use Illustrate\Contracts\Auth\UserProvider;
+use Illustrate\Contracts\Support\Arrayable;
+use Illustrate\Database\ConnectionInterface;
+use Illustrate\Contracts\Hashing\Hasher as HasherContract;
+use Illustrate\Contracts\Auth\Authenticatable as UserContract;
 class DatabaseUserProvider implements UserProvider
 {
     /**
      * The active database connection.
      *
-     * @var \Illuminate\Database\ConnectionInterface
+     * @var \Illustrate\Database\ConnectionInterface
      */
     protected $conn;
     /**
      * The hasher implementation.
      *
-     * @var \Illuminate\Contracts\Hashing\Hasher
+     * @var \Illustrate\Contracts\Hashing\Hasher
      */
     protected $hasher;
     /**
@@ -29,13 +29,12 @@ class DatabaseUserProvider implements UserProvider
     /**
      * Create a new database user provider.
      *
-     * @param  \Illuminate\Database\ConnectionInterface  $conn
-     * @param  \Illuminate\Contracts\Hashing\Hasher  $hasher
+     * @param  \Illustrate\Database\ConnectionInterface  $conn
+     * @param  \Illustrate\Contracts\Hashing\Hasher  $hasher
      * @param  string  $table
      * @return void
      */
-    public function __construct(ConnectionInterface $conn, HasherContract $hasher, $table)
-    {
+    public function __construct(ConnectionInterface $conn, HasherContract $hasher, $table) {
         $this->conn = $conn;
         $this->table = $table;
         $this->hasher = $hasher;
@@ -44,10 +43,9 @@ class DatabaseUserProvider implements UserProvider
      * Retrieve a user by their unique identifier.
      *
      * @param  mixed  $identifier
-     * @return \Illuminate\Contracts\Auth\Authenticatable|null
+     * @return \Illustrate\Contracts\Auth\Authenticatable|null
      */
-    public function retrieveById($identifier)
-    {
+    public function retrieveById($identifier) {
         $user = $this->conn->table($this->table)->find($identifier);
         return $this->getGenericUser($user);
     }
@@ -56,10 +54,9 @@ class DatabaseUserProvider implements UserProvider
      *
      * @param  mixed  $identifier
      * @param  string  $token
-     * @return \Illuminate\Contracts\Auth\Authenticatable|null
+     * @return \Illustrate\Contracts\Auth\Authenticatable|null
      */
-    public function retrieveByToken($identifier, $token)
-    {
+    public function retrieveByToken($identifier, $token) {
         $user = $this->getGenericUser(
             $this->conn->table($this->table)->find($identifier)
         );
@@ -69,12 +66,11 @@ class DatabaseUserProvider implements UserProvider
     /**
      * Update the "remember me" token for the given user in storage.
      *
-     * @param  \Illuminate\Contracts\Auth\Authenticatable  $user
+     * @param  \Illustrate\Contracts\Auth\Authenticatable  $user
      * @param  string  $token
      * @return void
      */
-    public function updateRememberToken(UserContract $user, $token)
-    {
+    public function updateRememberToken(UserContract $user, $token) {
         $this->conn->table($this->table)
                 ->where($user->getAuthIdentifierName(), $user->getAuthIdentifier())
                 ->update([$user->getRememberTokenName() => $token]);
@@ -83,10 +79,9 @@ class DatabaseUserProvider implements UserProvider
      * Retrieve a user by the given credentials.
      *
      * @param  array  $credentials
-     * @return \Illuminate\Contracts\Auth\Authenticatable|null
+     * @return \Illustrate\Contracts\Auth\Authenticatable|null
      */
-    public function retrieveByCredentials(array $credentials)
-    {
+    public function retrieveByCredentials(array $credentials) {
         if (empty($credentials) ||
            (count($credentials) === 1 &&
             array_key_exists('password', $credentials))) {
@@ -116,10 +111,9 @@ class DatabaseUserProvider implements UserProvider
      * Get the generic user.
      *
      * @param  mixed  $user
-     * @return \Illuminate\Auth\GenericUser|null
+     * @return \Illustrate\Auth\GenericUser|null
      */
-    protected function getGenericUser($user)
-    {
+    protected function getGenericUser($user) {
         if (! is_null($user)) {
             return new GenericUser((array) $user);
         }
@@ -127,12 +121,11 @@ class DatabaseUserProvider implements UserProvider
     /**
      * Validate a user against the given credentials.
      *
-     * @param  \Illuminate\Contracts\Auth\Authenticatable  $user
+     * @param  \Illustrate\Contracts\Auth\Authenticatable  $user
      * @param  array  $credentials
      * @return bool
      */
-    public function validateCredentials(UserContract $user, array $credentials)
-    {
+    public function validateCredentials(UserContract $user, array $credentials) {
         return $this->hasher->check(
             $credentials['password'], $user->getAuthPassword()
         );
