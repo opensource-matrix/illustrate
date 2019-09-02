@@ -32,7 +32,7 @@ class URIGenerator implements URIGeneratorContract {
         $path = $this->$path;
 
         $path = preg_replace('/\{(.*|[a-zA-Z0-9]*)\}/', '/(.*)/', $path);
-        $path = preg_replace('/[\/]+/', '/');
-        $path = preg_replace('/(.*)/', '$1')
+        $path = preg_replace('/[\/]+/', '/', $path);
+        $path = preg_replace('/(.*)/', '$1', $path)
     }
 }
