@@ -36,6 +36,7 @@ trait CreatesUserProviders {
                 );
         }
     }
+    
     /**
      * Get the user provider configuration.
      *
