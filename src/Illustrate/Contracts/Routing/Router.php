@@ -18,5 +18,5 @@ interface Router {
      */
     public function get();
 
-    public function 
+    public function post();
 }
