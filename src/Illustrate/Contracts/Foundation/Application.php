@@ -19,11 +19,4 @@ interface Application {
      * @return void
      */
     public function cache($data);
-
-    /**
-     * Get the cached data.
-     * 
-     * @return array
-     */
-    public function getCache();
 }
