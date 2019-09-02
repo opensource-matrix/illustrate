@@ -23,6 +23,11 @@ class URIGenerator implements URIGeneratorContract {
         $this->$path = $path;
     }
 
+    /**
+     * Generate the regex string and return it.
+     * 
+     * @return string
+     */
     public function generate() {
 
     }
