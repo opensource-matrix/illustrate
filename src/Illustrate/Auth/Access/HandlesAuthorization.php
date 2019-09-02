@@ -1,15 +1,14 @@
 <?php
-namespace Illuminate\Auth\Access;
+namespace Illustrate\Auth\Access;
 trait HandlesAuthorization
 {
     /**
      * Create a new access response.
      *
      * @param  string|null  $message
-     * @return \Illuminate\Auth\Access\Response
+     * @return \Illustrate\Auth\Access\Response
      */
-    protected function allow($message = null)
-    {
+    protected function allow($message = null) {
         return new Response($message);
     }
     /**
@@ -18,10 +17,9 @@ trait HandlesAuthorization
      * @param  string  $message
      * @return void
      *
-     * @throws \Illuminate\Auth\Access\AuthorizationException
+     * @throws \Illustreate\Auth\Access\AuthorizationException
      */
-    protected function deny($message = 'This action is unauthorized.')
-    {
+    protected function deny($message = 'This action is unauthorized.') {
         throw new AuthorizationException($message);
     }
 }
