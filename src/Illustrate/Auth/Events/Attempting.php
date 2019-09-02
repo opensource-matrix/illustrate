@@ -1,28 +1,37 @@
 <?php
-
-namespace {{namespace}}Http\Controllers;
-
-use Illuminate\Http\Request;
-
-class HomeController extends Controller
+namespace Illuminate\Auth\Events;
+class Attempting
 {
     /**
-     * Create a new controller instance.
+     * The authentication guard name.
      *
+     * @var string
+     */
+    public $guard;
+    /**
+     * The credentials for the user.
+     *
+     * @var array
+     */
+    public $credentials;
+    /**
+     * Indicates if the user should be "remembered".
+     *
+     * @var bool
+     */
+    public $remember;
+    /**
+     * Create a new event instance.
+     *
+     * @param  string  $guard
+     * @param  array  $credentials
+     * @param  bool  $remember
      * @return void
      */
-    public function __construct()
+    public function __construct($guard, $credentials, $remember)
     {
-        $this->middleware('auth');
-    }
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
-    public function index()
-    {
-        return view('home');
+        $this->guard = $guard;
+        $this->remember = $remember;
+        $this->credentials = $credentials;
     }
 }
