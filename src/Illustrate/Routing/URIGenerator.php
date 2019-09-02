@@ -12,4 +12,6 @@ class URIGenerator implements URIGeneratorContract {
      * @var string
      */
     private $path;
+
+    
 }
