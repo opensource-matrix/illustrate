@@ -16,7 +16,7 @@ class Router implements RouterContract {
      * Evaluate the URL and send it to the right handler.
      * 
      * @param string $path
-     * @param \
+     * @param \Illuminate\Route
      * @return void
      */
     public function evaluate($path = '/', $routeObject) {
