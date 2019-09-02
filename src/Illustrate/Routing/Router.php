@@ -13,6 +13,6 @@ class Router implements RouterContract {
     public $path;
 
     public function evaluate($path = '/') {
-        
+        $this->$path = $path;
     }
 }
