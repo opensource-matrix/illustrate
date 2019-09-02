@@ -1,6 +1,6 @@
 <?php
 
-namespace Illustrate\Router;
+namespace Illustrate\Routing;
 
 use Illustrate\Contracts\Routing\Router as RouterContract;
 
