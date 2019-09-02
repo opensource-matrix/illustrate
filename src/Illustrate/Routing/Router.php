@@ -12,6 +12,12 @@ class Router implements RouterContract {
      */
     public $path;
 
+    /**
+     * Evaluate the URL and send it to the right handler.
+     * 
+     * @param string $path
+     * @return void
+     */
     public function evaluate($path = '/') {
         $this->$path = $path;
 
@@ -21,6 +27,6 @@ class Router implements RouterContract {
     }
 
     private function get() {
-        
+
     }
 }
