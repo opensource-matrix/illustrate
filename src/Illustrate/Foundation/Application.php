@@ -28,10 +28,23 @@ class Application implements ApplicationContract {
         ]);
     }
 
+    /**
+     * Cache an array of data.
+     * 
+     * @param array $data
+     * @return void
+     */
     public function cache($key, $value) {
         $this->cached[$key] = $value;
     }
 
+    /**
+     * Generate with keys => values.
+     * 
+     * @param string $key
+     * @param mixed $value
+     * @return void
+     */
     public function generateCache($value) {
         $this->cache(hash('sha256', str_val(microtime(true))), $value);
     }

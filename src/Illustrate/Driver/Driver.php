@@ -30,10 +30,23 @@ class Driver implements DriverContract {
         $this->app = $app;
     }
 
+    /**
+     * Add a listener to the driver.
+     * 
+     * @param string $name
+     * @return void
+     */
     public function addListener($name) {
         $this->listeners[$name] = True;
     }
 
+    /**
+     * Activate a listener, then return data to the $closure.
+     * 
+     * @param string $name
+     * @param Closure $closure
+     * @return void;
+     */
     public function useListener($name, Closure $closure) {
         $use_closure = True;
         if(!isset($closure)) {
@@ -46,6 +59,12 @@ class Driver implements DriverContract {
         }
     }
 
+    /**
+     * Remove listener from the driver.
+     * 
+     * @param string $name
+     * @return void
+     */
     public function removeListener($name) {
         $listener = $this->resolve($name);
         if($listener || !$listener) {
@@ -53,6 +72,12 @@ class Driver implements DriverContract {
         }
     }
 
+    /**
+     * Resolve the listener with {$name} and do necessary checks.
+     * 
+     * @param string $name
+     * @return bool
+     */
     public function resolve($name) {
         $name = $name ?: null;
 
@@ -63,6 +88,13 @@ class Driver implements DriverContract {
         return $this->listeners[$name];
     }
 
+    /**
+     * Toggle a listener.
+     * 
+     * @param string $name
+     * @param bool|void $value
+     * @return void
+     */
     public function toggleListener($name, bool $value) {
         $listener = $this->resolve($name);
         if($listener || !$listener) {
@@ -71,6 +103,7 @@ class Driver implements DriverContract {
         }
     }
 
+    
     public function driver(Closure $closure) {
         $this->closure = $closure;
     }

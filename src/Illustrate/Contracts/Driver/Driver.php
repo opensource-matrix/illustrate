@@ -45,15 +45,6 @@ interface Driver {
      */
     public function toggleListener($name, $value);
 
-    /*
-    /**
-     * Configure the driver.
-     * 
-     * @param array $data
-     * @return void
-    public function config($data);
-    */
-
     /**
      * Set the driver closure.
      * 
