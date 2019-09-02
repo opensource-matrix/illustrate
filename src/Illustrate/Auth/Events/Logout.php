@@ -1,6 +1,6 @@
 <?php
-namespace Illuminate\Auth\Events;
-use Illuminate\Queue\SerializesModels;
+namespace Illustrate\Auth\Events;
+use Illustrate\Queue\SerializesModels;
 class Logout
 {
     use SerializesModels;
@@ -13,14 +13,14 @@ class Logout
     /**
      * The authenticated user.
      *
-     * @var \Illuminate\Contracts\Auth\Authenticatable
+     * @var \Illustrate\Contracts\Auth\Authenticatable
      */
     public $user;
     /**
      * Create a new event instance.
      *
      * @param  string $guard
-     * @param  \Illuminate\Contracts\Auth\Authenticatable  $user
+     * @param  \Illustrate\Contracts\Auth\Authenticatable  $user
      * @return void
      */
     public function __construct($guard, $user)
