@@ -7,6 +7,7 @@ interface Router {
      * Evaluate the URL and send it to the right handler.
      * 
      * @param string $path
+     * @return void
      */
     public function evaluate($path = '/');
 
