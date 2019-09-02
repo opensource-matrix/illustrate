@@ -9,19 +9,23 @@ class Application implements ApplicationContract {
      * 
      * @var array
      */
-    public $cache = [];
+    public $cached = [];
 
     public function call() {
         $closure = func_get_arg(0);
         $args = array_slice(func_get_args(), 1);
         call_user_func_array($closure, $args);
 
-        $this->generateCache(microtime(true), [
+        $this->generateCache([
             'arguments' => $args
         ]);
     }
 
     public function cache($key, $value) {
-        $this->$cache[$key] = $value;
+        $this->cached[$key] = $value;
+    }
+
+    public function generateCache($value) {
+        $this->cache(hash('sha256', str_val(microtime(true))), $value);
     }
 }
