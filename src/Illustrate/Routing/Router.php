@@ -2,6 +2,6 @@
 
 namespace Illustrate\Router;
 
-use Illustrate\Contracts\Routing\Router as FactoryContract;
+use Illustrate\Contracts\Routing\Router as RouterContract;
 
 class 
