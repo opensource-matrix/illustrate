@@ -2,4 +2,4 @@
 
 namespace Illustrate\Router;
 
-use Illustrate\
+use Illustrate\Contracts\Router\
