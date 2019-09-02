@@ -9,4 +9,6 @@ interface Router {
      * @param string $path
      */
     public function Evaluate($path = '/');
+
+    public function GET();
 }
