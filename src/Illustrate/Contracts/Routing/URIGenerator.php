@@ -10,4 +10,6 @@ interface URIGenerator {
      * @return void
      */
     public function setPath($path);
+
+    public function generate();
 }
