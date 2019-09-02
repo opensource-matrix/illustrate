@@ -11,7 +11,7 @@ interface Router {
     public function evaluate($path = '/');
 
     /**
-     * 
+     * GET request handler.
      */
     public function get();
 }
