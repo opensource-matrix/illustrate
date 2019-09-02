@@ -3,5 +3,5 @@
 namespace Illustrate\Contracts\Routing;
 
 interface Router {
-    public function();
+    public function ();
 }
