@@ -22,8 +22,7 @@ class AuthenticationException extends Exception {
      * @param  string|null  $redirectTo
      * @return void
      */
-    public function __construct($message = 'Unauthenticated.', array $guards = [], $redirectTo = null)
-    {
+    public function __construct($message = 'Unauthenticated.', array $guards = [], $redirectTo = null) {
         parent::__construct($message);
         $this->guards = $guards;
         $this->redirectTo = $redirectTo;
@@ -33,8 +32,7 @@ class AuthenticationException extends Exception {
      *
      * @return array
      */
-    public function guards()
-    {
+    public function guards{
         return $this->guards;
     }
     /**
@@ -42,8 +40,7 @@ class AuthenticationException extends Exception {
      *
      * @return string
      */
-    public function redirectTo()
-    {
+    public function redirectTo{
         return $this->redirectTo;
     }
 }
