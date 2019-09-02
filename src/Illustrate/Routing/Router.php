@@ -15,6 +15,8 @@ class Router implements RouterContract {
     public function evaluate($path = '/') {
         $this->$path = $path;
 
-        if($_SERVER['REQUEST_METHOD'])
+        if($_SERVER['REQUEST_METHOD'] == 'GET') {
+            
+        }
     }
 }
