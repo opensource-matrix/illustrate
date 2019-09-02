@@ -37,6 +37,15 @@ interface Driver {
     function resolve($name);
 
     /**
+     * Toggle a listener.
+     * 
+     * @param string $name
+     * @param bool|void $value
+     * @return void
+     */
+    public function toggleListener($name, $value);
+
+    /**
      * Configure the driver.
      * 
      * @param array $data
