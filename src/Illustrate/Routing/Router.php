@@ -16,7 +16,11 @@ class Router implements RouterContract {
         $this->$path = $path;
 
         if($_SERVER['REQUEST_METHOD'] == 'GET') {
-            
+
         }
+    }
+
+    private get() {
+        
     }
 }
