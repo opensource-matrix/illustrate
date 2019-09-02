@@ -16,12 +16,12 @@ interface Router {
      * 
      * @return void
      */
-    private function get();
+    function get();
 
     /**
      * POST request handler.
      * 
      * @return void
      */
-    private function post();
+    function post();
 }
