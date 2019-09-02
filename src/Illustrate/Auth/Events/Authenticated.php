@@ -1,8 +1,7 @@
 <?php
 namespace Illuminate\Auth\Events;
 use Illuminate\Queue\SerializesModels;
-class Authenticated
-{
+class Authenticated {
     use SerializesModels;
     /**
      * The authentication guard name.
@@ -23,8 +22,7 @@ class Authenticated
      * @param  \Illuminate\Contracts\Auth\Authenticatable  $user
      * @return void
      */
-    public function __construct($guard, $user)
-    {
+    public function __construct($guard, $user) {
         $this->user = $user;
         $this->guard = $guard;
     }
