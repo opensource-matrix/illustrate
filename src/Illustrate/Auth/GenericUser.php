@@ -1,6 +1,6 @@
 <?php
-namespace Illuminate\Auth;
-use Illuminate\Contracts\Auth\Authenticatable as UserContract;
+namespace Illustrate\Auth;
+use Illustrate\Contracts\Auth\Authenticatable as UserContract;
 class GenericUser implements UserContract
 {
     /**
@@ -15,8 +15,7 @@ class GenericUser implements UserContract
      * @param  array  $attributes
      * @return void
      */
-    public function __construct(array $attributes)
-    {
+    public function __construct(array $attributes) {
         $this->attributes = $attributes;
     }
     /**
@@ -24,8 +23,7 @@ class GenericUser implements UserContract
      *
      * @return string
      */
-    public function getAuthIdentifierName()
-    {
+    public function getAuthIdentifierName() {
         return 'id';
     }
     /**
@@ -33,8 +31,7 @@ class GenericUser implements UserContract
      *
      * @return mixed
      */
-    public function getAuthIdentifier()
-    {
+    public function getAuthIdentifier() {
         $name = $this->getAuthIdentifierName();
         return $this->attributes[$name];
     }
@@ -43,8 +40,7 @@ class GenericUser implements UserContract
      *
      * @return string
      */
-    public function getAuthPassword()
-    {
+    public function getAuthPassword() {
         return $this->attributes['password'];
     }
     /**
@@ -52,8 +48,7 @@ class GenericUser implements UserContract
      *
      * @return string
      */
-    public function getRememberToken()
-    {
+    public function getRememberToken() {
         return $this->attributes[$this->getRememberTokenName()];
     }
     /**
@@ -62,8 +57,7 @@ class GenericUser implements UserContract
      * @param  string  $value
      * @return void
      */
-    public function setRememberToken($value)
-    {
+    public function setRememberToken($value) {
         $this->attributes[$this->getRememberTokenName()] = $value;
     }
     /**
@@ -71,8 +65,7 @@ class GenericUser implements UserContract
      *
      * @return string
      */
-    public function getRememberTokenName()
-    {
+    public function getRememberTokenName() {
         return 'remember_token';
     }
     /**
@@ -81,8 +74,7 @@ class GenericUser implements UserContract
      * @param  string  $key
      * @return mixed
      */
-    public function __get($key)
-    {
+    public function __get($key) {
         return $this->attributes[$key];
     }
     /**
@@ -92,8 +84,7 @@ class GenericUser implements UserContract
      * @param  mixed  $value
      * @return void
      */
-    public function __set($key, $value)
-    {
+    public function __set($key, $value) {
         $this->attributes[$key] = $value;
     }
     /**
@@ -102,8 +93,7 @@ class GenericUser implements UserContract
      * @param  string  $key
      * @return bool
      */
-    public function __isset($key)
-    {
+    public function __isset($key) {
         return isset($this->attributes[$key]);
     }
     /**
@@ -112,8 +102,7 @@ class GenericUser implements UserContract
      * @param  string  $key
      * @return void
      */
-    public function __unset($key)
-    {
+    public function __unset($key) {
         unset($this->attributes[$key]);
     }
 }
