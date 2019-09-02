@@ -30,5 +30,7 @@ class URIGenerator implements URIGeneratorContract {
      */
     public function generate() {
         $path = $this->$path;
+
+        
     }
 }
