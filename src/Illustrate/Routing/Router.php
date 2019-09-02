@@ -7,6 +7,8 @@ use Illustrate\Contracts\Routing\Router as RouterContract;
 class Router implements RouterContract {
     /**
      * The path that was called.
+     * 
+     * @var 
      */
     public $path;
 
