@@ -1,8 +1,7 @@
 <?php
 namespace Illustrate\Auth\Events;
 use Illustrate\Queue\SerializesModels;
-class Logout
-{
+class Logout {
     use SerializesModels;
     /**
      * The authentication guard name.
@@ -23,8 +22,7 @@ class Logout
      * @param  \Illustrate\Contracts\Auth\Authenticatable  $user
      * @return void
      */
-    public function __construct($guard, $user)
-    {
+    public function __construct($guard, $user) {
         $this->user = $user;
         $this->guard = $guard;
     }
