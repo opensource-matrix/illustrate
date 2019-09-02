@@ -11,5 +11,8 @@ interface URIGenerator {
      */
     public function setPath($path);
 
+    /**
+     * 
+     */
     public function generate();
 }
