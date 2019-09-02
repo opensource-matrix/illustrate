@@ -4,7 +4,7 @@ namespace Illustrate\Contracts\Routing;
 
 interface Router {
     /**
-     * Evaluate the URL and send it to the right spot.
+     * Evaluate the URL and send it to the right handler.
      * 
      * @param string $path
      */
