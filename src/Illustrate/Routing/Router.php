@@ -32,6 +32,6 @@ class Router implements RouterContract {
      * @return void
      */
     private function get() {
-
+        
     }
 }
