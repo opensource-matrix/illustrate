@@ -29,6 +29,6 @@ class URIGenerator implements URIGeneratorContract {
      * @return string
      */
     public function generate() {
-
+        
     }
 }
