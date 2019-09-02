@@ -11,6 +11,13 @@ class Application implements ApplicationContract {
      */
     public $cached = [];
 
+    /**
+     * Call a function and cache it under the current application.
+     * 
+     * @param Closure $closure
+     * @param mixed $...
+     * @return void
+     */
     public function call() {
         $closure = func_get_arg(0);
         $args = array_slice(func_get_args(), 1);

@@ -4,7 +4,7 @@ namespace Illustrate\Contracts\Foundation;
 
 interface Application {
     /**
-     * Call the a function and cache it under the current application.
+     * Call a function and cache it under the current application.
      * 
      * @param Closure $closure
      * @param mixed $...
