@@ -1,5 +1,5 @@
 <?php
-namespace Illuminate\Auth;
+namespace Illustrate\Auth;
 trait MustVerifyEmail
 {
     /**
