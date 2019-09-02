@@ -6,7 +6,7 @@ interface URIGenerator {
     /**
      * Set the path to generate the URI regex from.
      * 
-     * @param $path;
+     * @param string $path;
      * @return void;
      */
     public function setPath($path);
