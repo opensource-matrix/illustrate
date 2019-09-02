@@ -1,0 +1,21 @@
+{
+    "name": "opensource-matrix/illustrate",
+    "description": "The logic behind Octopi.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Zack Pace",
+            "homepage": "https://github.com/RevelMind"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": "^7.3"
+    }
+    "autoload": {
+        "psr-4": {
+            "Illustrate\\": "src/Illustrate/"
+        }
+    }
+}
