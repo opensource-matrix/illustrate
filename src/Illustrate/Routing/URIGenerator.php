@@ -7,7 +7,9 @@ use Illustrate\Contracts\Routing\URIGenerator as URIGeneratorContract;
 
 class URIGenerator implements URIGeneratorContract {
     /**
+     * The URI input to generate the regex string from.
      * 
+     * @var string
      */
     private $path;
 }
