@@ -4,7 +4,7 @@ namespace Illustrate\Contracts\Routing;
 
 interface Router {
     /**
-     * @param $path
+     * @param string $path
      */
     public function Evaluate($path);
 }
