@@ -1,8 +1,7 @@
 <?php
 namespace Illuminate\Auth;
 use InvalidArgumentException;
-trait CreatesUserProviders
-{
+trait CreatesUserProviders {
     /**
      * The registered custom provider creators.
      *
@@ -17,8 +16,7 @@ trait CreatesUserProviders
      *
      * @throws \InvalidArgumentException
      */
-    public function createUserProvider($provider = null)
-    {
+    public function createUserProvider($provider = null) {
         if (is_null($config = $this->getProviderConfiguration($provider))) {
             return;
         }
