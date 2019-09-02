@@ -1,3 +1,3 @@
 <?php
 
-use Illustrate\Routing\]
+use Illustrate\Routing\GenerateURI as GenerateURI;
