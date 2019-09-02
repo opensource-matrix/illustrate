@@ -2,4 +2,6 @@
 
 namespace Illustrate\Contracts\Routing;
 
-interface 
+interface URIGenerator {
+    
+}
