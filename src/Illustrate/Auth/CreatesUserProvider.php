@@ -72,8 +72,7 @@ trait CreatesUserProviders {
      *
      * @return string
      */
-    public function getDefaultUserProvider()
-    {
+    public function getDefaultUserProvider() {
         return $this->app['config']['auth.defaults.provider'];
     }
 }
