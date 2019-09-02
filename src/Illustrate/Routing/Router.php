@@ -8,7 +8,7 @@ class Router implements RouterContract {
     /**
      * The path that was called.
      * 
-     * @var 
+     * @var string
      */
     public $path;
 
