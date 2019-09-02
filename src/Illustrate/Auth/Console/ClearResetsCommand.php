@@ -1,6 +1,6 @@
 <?php
-namespace Illuminate\Auth\Console;
-use Illuminate\Console\Command;
+namespace Illustrate\Auth\Console;
+use Illustrate\Console\Command;
 class ClearResetsCommand extends Command
 {
     /**
