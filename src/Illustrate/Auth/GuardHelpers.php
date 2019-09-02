@@ -1,7 +1,7 @@
 <?php
-namespace Illuminate\Auth;
-use Illuminate\Contracts\Auth\UserProvider;
-use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
+namespace Illustrate\Auth;
+use Illustrate\Contracts\Auth\UserProvider;
+use Illustrate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 /**
  * These methods are typically the same across all guards.
  */
@@ -10,24 +10,23 @@ trait GuardHelpers
     /**
      * The currently authenticated user.
      *
-     * @var \Illuminate\Contracts\Auth\Authenticatable
+     * @var \Illustrate\Contracts\Auth\Authenticatable
      */
     protected $user;
     /**
      * The user provider implementation.
      *
-     * @var \Illuminate\Contracts\Auth\UserProvider
+     * @var \Illustrate\Contracts\Auth\UserProvider
      */
     protected $provider;
     /**
      * Determine if current user is authenticated. If not, throw an exception.
      *
-     * @return \Illuminate\Contracts\Auth\Authenticatable
+     * @return \Illustrate\Contracts\Auth\Authenticatable
      *
-     * @throws \Illuminate\Auth\AuthenticationException
+     * @throws \Illustrate\Auth\AuthenticationException
      */
-    public function authenticate()
-    {
+    public function authenticate() {
         if (! is_null($user = $this->user())) {
             return $user;
         }
@@ -38,8 +37,7 @@ trait GuardHelpers
      *
      * @return bool
      */
-    public function hasUser()
-    {
+    public function hasUser() {
         return ! is_null($this->user);
     }
     /**
@@ -47,8 +45,7 @@ trait GuardHelpers
      *
      * @return bool
      */
-    public function check()
-    {
+    public function check() {
         return ! is_null($this->user());
     }
     /**
@@ -56,8 +53,7 @@ trait GuardHelpers
      *
      * @return bool
      */
-    public function guest()
-    {
+    public function guest() {
         return ! $this->check();
     }
     /**
@@ -65,8 +61,7 @@ trait GuardHelpers
      *
      * @return int|null
      */
-    public function id()
-    {
+    public function id() {
         if ($this->user()) {
             return $this->user()->getAuthIdentifier();
         }
@@ -74,31 +69,28 @@ trait GuardHelpers
     /**
      * Set the current user.
      *
-     * @param  \Illuminate\Contracts\Auth\Authenticatable  $user
+     * @param  \Illustrate\Contracts\Auth\Authenticatable  $user
      * @return $this
      */
-    public function setUser(AuthenticatableContract $user)
-    {
+    public function setUser(AuthenticatableContract $user) {
         $this->user = $user;
         return $this;
     }
     /**
      * Get the user provider used by the guard.
      *
-     * @return \Illuminate\Contracts\Auth\UserProvider
+     * @return \Illustrate\Contracts\Auth\UserProvider
      */
-    public function getProvider()
-    {
+    public function getProvider() {
         return $this->provider;
     }
     /**
      * Set the user provider used by the guard.
      *
-     * @param  \Illuminate\Contracts\Auth\UserProvider  $provider
+     * @param  \Illustrate\Contracts\Auth\UserProvider  $provider
      * @return void
      */
-    public function setProvider(UserProvider $provider)
-    {
+    public function setProvider(UserProvider $provider) {
         $this->provider = $provider;
     }
 }
