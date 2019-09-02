@@ -13,11 +13,17 @@ class URIGenerator implements URIGeneratorContract {
      */
     private $path;
 
+    /**
+     * Set the path to generate the URI regex from.
+     * 
+     * @param string $path
+     * @return void
+     */
     public function setPath($path) {
         $this->$path = $path;
     }
 
     public function generate() {
-        
+
     }
 }
