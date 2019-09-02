@@ -1,7 +1,7 @@
 <?php
-namespace Illuminate\Auth\Console;
-use Illuminate\Console\Command;
-use Illuminate\Console\DetectsApplicationNamespace;
+namespace Illustrate\Auth\Console;
+use Illustrate\Console\Command;
+use Illustrate\Console\DetectsApplicationNamespace;
 class AuthMakeCommand extends Command
 {
     use DetectsApplicationNamespace;
@@ -38,8 +38,7 @@ class AuthMakeCommand extends Command
      *
      * @return void
      */
-    public function handle()
-    {
+    public function handle() {
         $this->createDirectories();
         $this->exportViews();
         if (! $this->option('views')) {
@@ -60,8 +59,7 @@ class AuthMakeCommand extends Command
      *
      * @return void
      */
-    protected function createDirectories()
-    {
+    protected function createDirectories() {
         if (! is_dir($directory = $this->getViewPath('layouts'))) {
             mkdir($directory, 0755, true);
         }
@@ -74,8 +72,7 @@ class AuthMakeCommand extends Command
      *
      * @return void
      */
-    protected function exportViews()
-    {
+    protected function exportViews() {
         foreach ($this->views as $key => $value) {
             if (file_exists($view = $this->getViewPath($value)) && ! $this->option('force')) {
                 if (! $this->confirm("The [{$value}] view already exists. Do you want to replace it?")) {
@@ -93,8 +90,7 @@ class AuthMakeCommand extends Command
      *
      * @return string
      */
-    protected function compileControllerStub()
-    {
+    protected function compileControllerStub() {
         return str_replace(
             '{{namespace}}',
             $this->getAppNamespace(),
@@ -107,8 +103,7 @@ class AuthMakeCommand extends Command
      * @param  string  $path
      * @return string
      */
-    protected function getViewPath($path)
-    {
+    protected function getViewPath($path) {
         return implode(DIRECTORY_SEPARATOR, [
             config('view.paths')[0] ?? resource_path('views'), $path,
         ]);
