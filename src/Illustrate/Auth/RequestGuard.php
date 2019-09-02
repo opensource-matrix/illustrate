@@ -1,9 +1,9 @@
 <?php
-namespace Illuminate\Auth;
-use Illuminate\Http\Request;
-use Illuminate\Contracts\Auth\Guard;
-use Illuminate\Support\Traits\Macroable;
-use Illuminate\Contracts\Auth\UserProvider;
+namespace Illustrate\Auth;
+use Illustrate\Http\Request;
+use Illustrate\Contracts\Auth\Guard;
+use Illustrate\Support\Traits\Macroable;
+use Illustrate\Contracts\Auth\UserProvider;
 class RequestGuard implements Guard
 {
     use GuardHelpers, Macroable;
@@ -16,19 +16,18 @@ class RequestGuard implements Guard
     /**
      * The request instance.
      *
-     * @var \Illuminate\Http\Request
+     * @var \Illustrate\Http\Request
      */
     protected $request;
     /**
      * Create a new authentication guard.
      *
      * @param  callable  $callback
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Illuminate\Contracts\Auth\UserProvider|null $provider
+     * @param  \Illustrate\Http\Request  $request
+     * @param  \Illustrate\Contracts\Auth\UserProvider|null $provider
      * @return void
      */
-    public function __construct(callable $callback, Request $request, UserProvider $provider = null)
-    {
+    public function __construct(callable $callback, Request $request, UserProvider $provider = null) {
         $this->request = $request;
         $this->callback = $callback;
         $this->provider = $provider;
@@ -36,10 +35,9 @@ class RequestGuard implements Guard
     /**
      * Get the currently authenticated user.
      *
-     * @return \Illuminate\Contracts\Auth\Authenticatable|null
+     * @return \Illustrate\Contracts\Auth\Authenticatable|null
      */
-    public function user()
-    {
+    public function user() {
         // If we've already retrieved the user for the current request we can just
         // return it back immediately. We do not want to fetch the user data on
         // every call to this method because that would be tremendously slow.
@@ -56,8 +54,7 @@ class RequestGuard implements Guard
      * @param  array  $credentials
      * @return bool
      */
-    public function validate(array $credentials = [])
-    {
+    public function validate(array $credentials = []) {
         return ! is_null((new static(
             $this->callback, $credentials['request'], $this->getProvider()
         ))->user());
@@ -65,11 +62,10 @@ class RequestGuard implements Guard
     /**
      * Set the current request instance.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illustrate\Http\Request  $request
      * @return $this
      */
-    public function setRequest(Request $request)
-    {
+    public function setRequest(Request $request) {
         $this->request = $request;
         return $this;
     }
