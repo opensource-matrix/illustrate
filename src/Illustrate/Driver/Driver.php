@@ -70,4 +70,8 @@ class Driver implements DriverContract {
             $this->listeners[$name] = $value;
         }
     }
+
+    public function driver(Closure $closure) {
+        $this->closure = $closure;
+    }
 }
