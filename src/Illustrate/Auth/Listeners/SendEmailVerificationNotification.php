@@ -1,5 +1,5 @@
 <?php
-namespace Illuminate\Auth\Listeners;
+namespace Illustrate\Auth\Listeners;
 use Illustrate\Auth\Events\Registered;
 use Illustrate\Contracts\Auth\MustVerifyEmail;
 class SendEmailVerificationNotification {
