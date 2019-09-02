@@ -28,8 +28,7 @@ class Attempting
      * @param  bool  $remember
      * @return void
      */
-    public function __construct($guard, $credentials, $remember)
-    {
+    public function __construct($guard, $credentials, $remember) {
         $this->guard = $guard;
         $this->remember = $remember;
         $this->credentials = $credentials;
