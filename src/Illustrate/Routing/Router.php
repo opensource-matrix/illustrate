@@ -20,7 +20,7 @@ class Router implements RouterContract {
         }
     }
 
-    private get() {
+    private function get() {
         
     }
 }
