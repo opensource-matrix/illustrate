@@ -1,8 +1,7 @@
 <?php
 namespace Illustrate\Auth\Events;
 use Illustrate\Http\Request;
-class Lockout
-{
+class Lockout {
     /**
      * The throttled request.
      *
@@ -15,8 +14,7 @@ class Lockout
      * @param  \Illustrate\Http\Request  $request
      * @return void
      */
-    public function __construct(Request $request)
-    {
+    public function __construct(Request $request) {
         $this->request = $request;
     }
 }
