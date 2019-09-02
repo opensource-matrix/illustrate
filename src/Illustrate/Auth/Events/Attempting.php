@@ -1,5 +1,5 @@
 <?php
-namespace Illuminate\Auth\Events;
+namespace Illustrate\Auth\Events;
 class Attempting
 {
     /**
