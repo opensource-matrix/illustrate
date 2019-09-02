@@ -19,4 +19,13 @@ interface Application {
      * @return void
      */
     public function cache($data);
+
+    /**
+     * Generate with keys => values.
+     * 
+     * @param string $key
+     * @param mixed $value
+     * @return void
+     */
+    public function generateCache($key, $value);
 }
