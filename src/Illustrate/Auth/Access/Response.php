@@ -14,8 +14,7 @@ class Response
      * @param  string|null  $message
      * @return void
      */
-    public function __construct($message = null)
-    {
+    public function __construct($message = null) {
         $this->message = $message;
     }
     /**
@@ -23,8 +22,7 @@ class Response
      *
      * @return string|null
      */
-    public function message()
-    {
+    public function message() {
         return $this->message;
     }
     /**
@@ -32,8 +30,7 @@ class Response
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return (string) $this->message();
     }
 }
