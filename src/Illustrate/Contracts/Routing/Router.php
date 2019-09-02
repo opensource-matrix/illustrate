@@ -20,6 +20,8 @@ interface Router {
 
     /**
      * POST request handler.
+     * 
+     * @return void
      */
     public function post();
 }
