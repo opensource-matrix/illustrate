@@ -16,7 +16,7 @@ interface Router {
      * 
      * @return void
      */
-    public function get();
+    private function get();
 
     /**
      * POST request handler.
