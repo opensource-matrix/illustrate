@@ -19,7 +19,7 @@ interface Router {
     public function get();
 
     /**
-     * 
+     * POST request handler.
      */
     public function post();
 }
