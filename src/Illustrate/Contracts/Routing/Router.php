@@ -10,5 +10,5 @@ interface Router {
      */
     public function Evaluate($path = '/');
 
-    public function GET();
+    public function get();
 }
