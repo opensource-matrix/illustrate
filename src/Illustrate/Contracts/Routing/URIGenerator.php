@@ -12,7 +12,7 @@ interface URIGenerator {
     public function setPath($path);
 
     /**
-     * Generate the regex string.
+     * Generate the regex string and return it.
      * 
      * @return string
      */
