@@ -26,6 +26,11 @@ class Router implements RouterContract {
         }
     }
 
+    /**
+     * GET request handler.
+     * 
+     * @return void
+     */
     private function get() {
 
     }
