@@ -1,5 +1,5 @@
 <?php
-namespace Illuminate\Auth\Access;
+namespace Illustrate\Auth\Access;
 use Exception;
 class AuthorizationException extends Exception
 {
