@@ -41,8 +41,7 @@ class AuthenticationException extends Exception {
      *
      * @return string
      */
-    public function redirectTo()
-    {
+    public function redirectTo() {
         return $this->redirectTo;
     }
 }
