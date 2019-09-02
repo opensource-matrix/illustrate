@@ -2,6 +2,7 @@
 
 namespace Illustrate\Contracts\Routing;
 
+
 interface Router {
-    public function Evaluate();
+    public function Evaluate(Request $request);
 }
