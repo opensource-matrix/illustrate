@@ -2,8 +2,7 @@
 namespace Illuminate\Auth\Listeners;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
-class SendEmailVerificationNotification
-{
+class SendEmailVerificationNotification {
     /**
      * Handle the event.
      *
