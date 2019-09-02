@@ -13,7 +13,7 @@ class URIGenerator implements URIGeneratorContract {
      */
     private $path;
 
-    public function setPath() {
+    public function setPath($path) {
         
     }
 }
