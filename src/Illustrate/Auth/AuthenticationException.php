@@ -1,8 +1,7 @@
 <?php
 namespace Illuminate\Auth;
 use Exception;
-class AuthenticationException extends Exception
-{
+class AuthenticationException extends Exception {
     /**
      * All of the guards that were checked.
      *
