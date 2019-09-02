@@ -2,4 +2,4 @@
 
 namespace Illustrate\Router;
 
-use Illustrate\Contracts\Router\FactoryContract as FactoryContract;
+use Illustrate\Contracts\Router as FactoryContract;
