@@ -16,10 +16,12 @@ class Application implements ApplicationContract {
         $args = array_slice(func_get_args(), 1);
         call_user_func_array($closure, $args);
 
-        $this->cache($this->generateCache(microtime(true), [
+        $this->generateCache(microtime(true), [
             'arguments' => $args
-        ]));
+        ]);
     }
 
-    
+    public function cache($key, $value) {
+        $this->$cache[$key] = $value;
+    }
 }
