@@ -1,3 +1,4 @@
 <?php
 
-namespace Illustrate\Contracts
+namespace Illustrate\Contracts\Routing;
+
