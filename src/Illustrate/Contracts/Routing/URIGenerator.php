@@ -2,3 +2,4 @@
 
 namespace Illustrate\Contracts\Routing;
 
+interface 
