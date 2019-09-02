@@ -36,7 +36,7 @@ trait CreatesUserProviders {
                 );
         }
     }
-    
+
     /**
      * Get the user provider configuration.
      *
@@ -54,8 +54,7 @@ trait CreatesUserProviders {
      * @param  array  $config
      * @return \Illuminate\Auth\DatabaseUserProvider
      */
-    protected function createDatabaseProvider($config)
-    {
+    protected function createDatabaseProvider($config) {
         $connection = $this->app['db']->connection();
         return new DatabaseUserProvider($connection, $this->app['hash'], $config['table']);
     }
@@ -65,8 +64,7 @@ trait CreatesUserProviders {
      * @param  array  $config
      * @return \Illuminate\Auth\EloquentUserProvider
      */
-    protected function createEloquentProvider($config)
-    {
+    protected function createEloquentProvider($config) {
         return new EloquentUserProvider($this->app['hash'], $config['model']);
     }
     /**
