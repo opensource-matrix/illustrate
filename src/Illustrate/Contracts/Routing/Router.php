@@ -12,6 +12,8 @@ interface Router {
 
     /**
      * GET request handler.
+     * 
+     * @return void
      */
     public function get();
 }
