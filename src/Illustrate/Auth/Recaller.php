@@ -1,6 +1,6 @@
 <?php
-namespace Illuminate\Auth;
-use Illuminate\Support\Str;
+namespace Illustrate\Auth;
+use Illustrate\Support\Str;
 class Recaller
 {
     /**
@@ -15,8 +15,7 @@ class Recaller
      * @param  string  $recaller
      * @return void
      */
-    public function __construct($recaller)
-    {
+    public function __construct($recaller) {
         $this->recaller = @unserialize($recaller, ['allowed_classes' => false]) ?: $recaller;
     }
     /**
@@ -24,8 +23,7 @@ class Recaller
      *
      * @return string
      */
-    public function id()
-    {
+    public function id() {
         return explode('|', $this->recaller, 3)[0];
     }
     /**
@@ -33,8 +31,7 @@ class Recaller
      *
      * @return string
      */
-    public function token()
-    {
+    public function token() {
         return explode('|', $this->recaller, 3)[1];
     }
     /**
@@ -42,8 +39,7 @@ class Recaller
      *
      * @return string
      */
-    public function hash()
-    {
+    public function hash() {
         return explode('|', $this->recaller, 3)[2];
     }
     /**
@@ -51,8 +47,7 @@ class Recaller
      *
      * @return bool
      */
-    public function valid()
-    {
+    public function valid() {
         return $this->properString() && $this->hasAllSegments();
     }
     /**
@@ -60,8 +55,7 @@ class Recaller
      *
      * @return bool
      */
-    protected function properString()
-    {
+    protected function properString() {
         return is_string($this->recaller) && Str::contains($this->recaller, '|');
     }
     /**
@@ -69,8 +63,7 @@ class Recaller
      *
      * @return bool
      */
-    protected function hasAllSegments()
-    {
+    protected function hasAllSegments() {
         $segments = explode('|', $this->recaller);
         return count($segments) === 3 && trim($segments[0]) !== '' && trim($segments[1]) !== '';
     }
