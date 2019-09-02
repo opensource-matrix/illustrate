@@ -18,7 +18,7 @@ class Router implements RouterContract {
      * @param string $path
      * @return void
      */
-    public function evaluate($path = '/') {
+    public function evaluate($path = '/', $route) {
         $this->$path = $path;
 
         if($_SERVER['REQUEST_METHOD'] == 'GET') {
@@ -32,6 +32,6 @@ class Router implements RouterContract {
      * @return void
      */
     private function get() {
-        
+
     }
 }
