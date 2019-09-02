@@ -1,3 +1,0 @@
-<?php
-
-namespace Illustrate\Database;
