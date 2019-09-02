@@ -13,6 +13,8 @@ interface URIGenerator {
 
     /**
      * Generate the regex string.
+     * 
+     * @return string
      */
     public function generate();
 }
