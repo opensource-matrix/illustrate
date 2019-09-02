@@ -1,7 +1,6 @@
 <?php
 namespace Illustrate\Auth\Events;
-class Attempting
-{
+class Attempting {
     /**
      * The authentication guard name.
      *
