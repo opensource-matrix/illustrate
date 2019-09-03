@@ -16,9 +16,10 @@ interface Driver {
      * 
      * @param string $name
      * @param Closure $closure
+     * @param array $data
      * @return void;
      */
-    public function useListener($name, Closure $closure);
+    public function useListener($name, Closure $closure, $data);
 
     /**
      * Remove listener from the driver.

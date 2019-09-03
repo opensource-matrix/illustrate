@@ -10,7 +10,7 @@ class Driver implements DriverContract {
      * 
      * @var \Illuminate\Foundation\Application
      */
-    public $app;
+    protected $app;
 
     /**
      * The driver closure.
@@ -26,7 +26,15 @@ class Driver implements DriverContract {
      */
     public $listeners = [];
 
-    public function __construct($app) {
+    /**
+     * The name of the driver.
+     * 
+     * @var string
+     */
+    public $name;
+
+    public function __construct($name, $app) {
+        $this->name = $name;
         $this->app = $app;
     }
 
@@ -41,13 +49,14 @@ class Driver implements DriverContract {
     }
 
     /**
-     * Activate a listener, then return data to the $closure.
+     * Activate a listener, then pipe data to the $closure.
      * 
      * @param string $name
      * @param Closure $closure
+     * @param array $data
      * @return void;
      */
-    public function useListener($name, Closure $closure) {
+    public function useListener(Closure $closure, $data) {
         $use_closure = True;
         if(!isset($closure)) {
             $use_closure = False;
@@ -55,7 +64,7 @@ class Driver implements DriverContract {
 
         $listener = $this->resolve($name);
         if($listener) { // If not disabled.
-            $this->app->call($this->closure, $name);
+            $this->app->call($this->closure, $data);
         }
     }
 
@@ -103,7 +112,12 @@ class Driver implements DriverContract {
         }
     }
 
-    
+    /**
+     * Set the driver closure.
+     * 
+     * @param Closure $driver
+     * @return void
+     */
     public function driver(Closure $closure) {
         $this->closure = $closure;
     }
