@@ -1,0 +1,19 @@
+{
+    "name": "illustrate/router",
+    "description": "The logic behind Octopi.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Zack",
+            "email": "mcodikid@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Illustrate\\Router\\": ""
+        }
+    }
+}
